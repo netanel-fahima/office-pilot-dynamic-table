@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #1677ff;
+}
+
+body {
+  direction: rtl;
+}
+
+.editing-row td {
+  background-color: #e6f4ff !important;
+}
+
+.ant-table-cell-row-hover {
+  background-color: #fafafa !important;
+}
+.dragging-column {
+  background-color: #f0f7ff;
+  border-color: #1677ff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: grabbing;
+}
