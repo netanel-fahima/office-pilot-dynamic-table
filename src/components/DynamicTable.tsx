@@ -548,7 +548,7 @@ const DynamicTable: React.FC<DynamicTableProps> = ({
   }
 
   return (
-    <div className="max-w-[1400px] mx-auto">
+    <div style={{ maxWidth: "1400px", margin: "0 auto" }}>
       <Card>
         <TableHeader
           search={search}
