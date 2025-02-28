@@ -48,15 +48,8 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
   onExport,
 }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        marginBottom: "1.5rem",
-      }}
-    >
-      <h1 style={{ fontSize: "1.25rem", fontWeight: "600" }}>{title}</h1>
+    <div className="table-header">
+      <h1 className="table-title">{title}</h1>
       <Space>
         {exportOptions.enabled && onExport && (
           <Dropdown
@@ -67,11 +60,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
                       {
                         key: "excel",
                         label: "ייצוא ל-Excel",
-                        icon: (
-                          <FileSpreadsheet
-                            style={{ width: "1rem", height: "1rem" }}
-                          />
-                        ),
+                        icon: <FileSpreadsheet className="button-icon" />,
                         onClick: () => onExport("excel"),
                       },
                     ]
@@ -81,9 +70,7 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
                       {
                         key: "csv",
                         label: "ייצוא ל-CSV",
-                        icon: (
-                          <Download style={{ width: "1rem", height: "1rem" }} />
-                        ),
+                        icon: <Download className="button-icon" />,
                         onClick: () => onExport("csv"),
                       },
                     ]
@@ -91,16 +78,14 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
               ],
             }}
           >
-            <Button
-              icon={<Download style={{ width: "1rem", height: "1rem" }} />}
-            >
+            <Button icon={<Download className="button-icon" />}>
               {exportOptions.buttonText}
             </Button>
           </Dropdown>
         )}
         {columnSettings.enabled && onColumnSettingsClick && (
           <Button
-            icon={<Settings2 style={{ width: "1rem", height: "1rem" }} />}
+            icon={<Settings2 className="button-icon" />}
             onClick={onColumnSettingsClick}
           >
             {columnSettings.buttonText}
@@ -109,16 +94,16 @@ export const TableHeader: React.FC<TableHeaderProps> = ({
         {search.enabled && (
           <Input
             placeholder={search.placeholder}
-            prefix={<Search style={{ width: "1rem", height: "1rem" }} />}
+            prefix={<Search className="button-icon" />}
             value={searchText}
             onChange={(e) => onSearchChange(e.target.value)}
-            style={{ width: "16rem" }}
+            className="search-input"
           />
         )}
         {onAdd && (
           <Button
             type="primary"
-            icon={<Plus style={{ width: "1rem", height: "1rem" }} />}
+            icon={<Plus className="button-icon" />}
             onClick={onAdd}
           >
             {addButtonText}

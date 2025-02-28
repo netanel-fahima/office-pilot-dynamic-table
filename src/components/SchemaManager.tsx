@@ -908,33 +908,18 @@ export default function SchemaManager() {
   ];
 
   return (
-    <div style={{ backgroundColor: "#f9fafb", padding: "1.5rem" }}>
-      <div
-        style={{ maxWidth: "1400px", margin: "0 auto", marginBottom: "2rem" }}
-      >
+    <div className="schema-manager">
+      <div className="schema-manager-container">
         <Card>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: "1.5rem",
-            }}
-          >
-            <div
-              style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}
-            >
-              <Settings2
-                style={{ width: "1.5rem", height: "1.5rem", color: "#2563eb" }}
-              />
-              <h1 style={{ fontSize: "1.25rem", fontWeight: "600" }}>
-                ניהול סכמות
-              </h1>
+          <div className="schema-manager-header">
+            <div className="schema-manager-title">
+              <Settings2 className="schema-manager-icon" />
+              <h1 className="schema-manager-heading">ניהול סכמות</h1>
             </div>
             <Space>
               <Button
                 type="primary"
-                icon={<Plus style={{ width: "1rem", height: "1rem" }} />}
+                icon={<Plus className="button-icon" />}
                 onClick={handleAdd}
               >
                 הוסף סכמה
