@@ -3,9 +3,16 @@
   "private": false,
   "version": "1.0.0",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "dependencies": {
     "@hello-pangea/dnd": "^16.5.0",
     "@rjsf/antd": "^5.17.1",
