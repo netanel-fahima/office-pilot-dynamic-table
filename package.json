@@ -3,30 +3,23 @@
   "private": false,
   "version": "1.0.0",
   "type": "module",
-  "main": "dist/index.cjs.js",
+  "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
-  "dependencies": {
-    "@hello-pangea/dnd": "^16.5.0",
-    "@rjsf/antd": "^5.17.1",
-    "@rjsf/core": "^5.17.1",
-    "@rjsf/utils": "^5.17.1",
-    "@rjsf/validator-ajv8": "^5.17.1",
-    "xlsx": "^0.18.5",
-    "file-saver": "^2.0.5"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "antd": "^5.0.0",
-    "firebase": "^10.0.0"
+    "firebase": "^10.0.0",
+    "@hello-pangea/dnd": "^16.0.0",
+    "@rjsf/antd": "^5.0.0",
+    "@rjsf/core": "^5.0.0",
+    "@rjsf/utils": "^5.0.0",
+    "@rjsf/validator-ajv8": "^5.0.0",
+    "xlsx": "^0.18.0",
+    "file-saver": "^2.0.0",
+    "lucide-react": "^0.300.0"
   },
   "files": [
     "dist",
@@ -57,7 +50,7 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs",
+      "require": "./dist/index.umd.js",
       "types": "./dist/index.d.ts"
     }
   },
