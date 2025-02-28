@@ -2,24 +2,24 @@
   "name": "@office-pilot/dynamic-table",
   "private": false,
   "version": "1.0.0",
-  "type": "module",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
   "types": "dist/index.d.ts",
-  "dependencies": {},
+  "sideEffects": false,
+  "dependencies": {
+    "@hello-pangea/dnd": "^16.5.0",
+    "@rjsf/antd": "^5.17.1",
+    "@rjsf/core": "^5.17.1",
+    "@rjsf/utils": "^5.17.1",
+    "@rjsf/validator-ajv8": "^5.17.1",
+    "file-saver": "^2.0.5",
+    "xlsx": "^0.18.5"
+  },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "antd": "^5.0.0",
-    "firebase": "^10.0.0",
-    "@hello-pangea/dnd": "^16.0.0",
-    "@rjsf/antd": "^5.0.0",
-    "@rjsf/core": "^5.0.0",
-    "@rjsf/utils": "^5.0.0",
-    "@rjsf/validator-ajv8": "^5.0.0",
-    "xlsx": "^0.18.0",
-    "file-saver": "^2.0.0",
-    "lucide-react": "^0.300.0"
+    "firebase": "^10.0.0"
   },
   "files": [
     "dist",
@@ -49,13 +49,14 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.js",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js",
       "types": "./dist/index.d.ts"
     }
   },
   "devDependencies": {
     "@eslint/js": "^9.9.1",
+    "@types/file-saver": "^2.0.7",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
@@ -71,16 +72,9 @@
     "vite": "^5.4.2",
     "vite-plugin-dts": "^3.7.3",
     "antd": "^5.15.2",
-    "file-saver": "^2.0.5",
     "firebase": "^10.8.1",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "xlsx": "^0.18.5",
-    "@rjsf/core": "^5.17.1",
-    "@rjsf/antd": "^5.17.1",
-    "@rjsf/utils": "^5.17.1",
-    "@rjsf/validator-ajv8": "^5.17.1",
-    "@hello-pangea/dnd": "^16.5.0"
+    "react-dom": "^18.3.1"
   }
 }

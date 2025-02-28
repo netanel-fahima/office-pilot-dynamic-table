@@ -7,15 +7,16 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      include: ["src/**/*.{ts,tsx}"],
-      rollupTypes: true,
+      include: ["src"],
+      exclude: ["src/**/*.test.ts", "src/**/*.test.tsx"],
     }),
   ],
   build: {
+    sourcemap: true,
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "DynamicTable",
-      formats: ["es", "umd"],
+      formats: ["es", "cjs"],
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
@@ -38,6 +39,7 @@ export default defineConfig({
       output: {
         globals: {
           react: "React",
+          "react/jsx-runtime": "jsx",
           "react-dom": "ReactDOM",
           antd: "antd",
           "firebase/app": "firebase",
