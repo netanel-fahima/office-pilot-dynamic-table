@@ -15,25 +15,11 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "DynamicTable",
-      formats: ["es", "umd"],
-      fileName: "index",
+      formats: ["es", "umd", "cjs"],
+      fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: [
-        "react",
-        "react-dom",
-        "antd",
-        "firebase/firestore",
-        "firebase/app",
-        "lucide-react",
-        "@hello-pangea/dnd",
-        "@rjsf/antd",
-        "@rjsf/core",
-        "@rjsf/utils",
-        "@rjsf/validator-ajv8",
-        "xlsx",
-        "file-saver",
-      ],
+      external: ["react", "react-dom", "antd", "firebase", "lucide-react"],
       output: {
         globals: {
           react: "React",
