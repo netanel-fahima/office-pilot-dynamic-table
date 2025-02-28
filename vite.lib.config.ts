@@ -7,26 +7,42 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      insertTypesEntry: true,
       include: ["src/**/*.{ts,tsx}"],
+      rollupTypes: true,
     }),
   ],
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       name: "DynamicTable",
-      formats: ["es", "umd", "cjs"],
+      formats: ["es", "umd"],
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ["react", "react-dom", "antd", "firebase", "lucide-react"],
+      external: [
+        "react",
+        "react-dom",
+        "antd",
+        "firebase/app",
+        "firebase/firestore",
+        "firebase/auth",
+        "lucide-react",
+        "@hello-pangea/dnd",
+        "@rjsf/antd",
+        "@rjsf/core",
+        "@rjsf/utils",
+        "@rjsf/validator-ajv8",
+        "xlsx",
+        "file-saver",
+      ],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
           antd: "antd",
-          "firebase/firestore": "firestore",
           "firebase/app": "firebase",
+          "firebase/firestore": "firestore",
+          "firebase/auth": "auth",
           "lucide-react": "lucide",
           "@hello-pangea/dnd": "dnd",
           "@rjsf/antd": "rjsfAntd",
